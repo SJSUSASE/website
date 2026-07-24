@@ -11,15 +11,11 @@ type NavLink = {
   label: string;
 };
 
-/*
- * About Us, Events, and Programs are built but not yet signed off by the board,
- * so only Sponsorship is linked from the top nav for now. Uncomment the rest
- * once their copy is final.
- */
 const links: NavLink[] = [
-  // { href: "/about-us", label: "About Us" },
-  // { href: "/events", label: "Events" },
-  // { href: "/programs", label: "Programs" },
+  { href: "/", label: "Home" },
+  { href: "/about-us", label: "About Us" },
+  { href: "/events", label: "Events" },
+  { href: "/programs", label: "Programs" },
   { href: "/sponsorship", label: "Sponsorship" },
 ];
 
