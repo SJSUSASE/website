@@ -1,0 +1,186 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 4rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+
+.brandMark {
+  height: 1.75rem;
+  width: auto;
+}
+
+.brandText {
+  font-weight: 800;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.brandAt {
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link,
+.linkActive {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+
+.link:hover {
+  color: var(--color-ink);
+}
+
+.linkActive {
+  color: var(--color-sase-blue);
+  font-weight: 600;
+  border-bottom-color: var(--color-sase-blue);
+}
+
+/* ------------------------------------------------------- mobile toggle */
+
+.toggle {
+  display: none;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+}
+
+/*
+ * The hamburger is drawn with one element plus its two pseudo-elements, which
+ * rotate into an X when the menu is open.
+ */
+.bars,
+.barsOpen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 1.125rem;
+  height: 2px;
+  background-color: var(--color-ink);
+  transition: background-color 0.18s ease;
+}
+
+.bars::before,
+.bars::after,
+.barsOpen::before,
+.barsOpen::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-ink);
+  transition: translate 0.18s ease, rotate 0.18s ease;
+}
+
+.bars::before {
+  translate: 0 -6px;
+}
+
+.bars::after {
+  translate: 0 6px;
+}
+
+.barsOpen {
+  background-color: transparent;
+}
+
+.barsOpen::before {
+  rotate: 45deg;
+}
+
+.barsOpen::after {
+  rotate: -45deg;
+}
+
+/* --------------------------------------------------------- mobile menu */
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem var(--gutter) 1.5rem;
+  border-top: 1px solid var(--color-line);
+  background-color: #ffffff;
+}
+
+.mobileNav ul {
+  list-style: none;
+  margin: 0 0 0.75rem;
+  padding: 0;
+}
+
+.mobileLink,
+.mobileLinkActive {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 1.0625rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.mobileLink {
+  color: var(--color-ink);
+}
+
+.mobileLinkActive {
+  color: var(--color-sase-blue);
+  font-weight: 600;
+}
+
+@media (width <= 800px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .mobileNav {
+    display: flex;
+  }
+}

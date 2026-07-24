@@ -1,0 +1,84 @@
+/*
+ * The comparison table keeps its shape on small screens and scrolls inside its
+ * own container rather than forcing the page to scroll sideways.
+ */
+.scroller {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+}
+
+.table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-small);
+  text-align: center;
+}
+
+.table thead th {
+  border-bottom-width: 2px;
+  vertical-align: bottom;
+}
+
+.table tbody th,
+.table thead th:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-ink);
+  width: 40%;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: var(--color-surface);
+}
+
+.tierName {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.tierPrice {
+  display: block;
+  margin-top: 0.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-sase-blue);
+}
+
+/* Checkmark and dash, drawn rather than shipped as icons. */
+.yes {
+  display: inline-block;
+  width: 0.4375rem;
+  height: 0.8125rem;
+  border: solid var(--color-sase-green-dark);
+  border-width: 0 2.5px 2.5px 0;
+  rotate: 45deg;
+  translate: 0 -2px;
+}
+
+.no {
+  display: inline-block;
+  width: 0.75rem;
+  height: 2px;
+  background-color: var(--color-line);
+  vertical-align: middle;
+}
+
+.marketingList {
+  margin-top: 1.125rem;
+}

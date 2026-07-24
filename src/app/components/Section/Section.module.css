@@ -1,0 +1,63 @@
+.section {
+  padding-block: var(--section-y);
+}
+
+.light {
+  background-color: #ffffff;
+}
+
+.surface {
+  background-color: var(--color-surface);
+}
+
+.tint {
+  background-color: var(--color-sase-blue-tint);
+}
+
+.deep {
+  background-color: var(--color-sase-blue-deep);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.deep :is(h1, h2, h3, h4) {
+  color: #ffffff;
+}
+
+.deep .lede {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.deep .eyebrow,
+.deep :global(.eyebrow) {
+  color: var(--color-sase-green);
+}
+
+.narrow {
+  max-width: 48rem;
+}
+
+.header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 46rem;
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0.625rem;
+}
+
+.rule {
+  margin-top: 1.125rem;
+}
+
+.ruleCenter {
+  margin-inline: auto;
+}
+
+.lede {
+  margin-top: 1.125rem;
+}

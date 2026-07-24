@@ -1,12 +1,6 @@
+/* Fills the hero it is placed in; the hero owns the sizing. */
 .carouselContainer {
   position: absolute;
-  top: 3rem;
-  height: 37.5rem;
-  width: 100%;
-}
-
-@media (width <= 640px) {
-  .carouselContainer {
-    height: 31rem;
-  }
+  inset: 0;
+  z-index: -2;
 }

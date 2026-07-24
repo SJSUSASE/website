@@ -1,280 +1,201 @@
-.headerContainer {
-  width: fit-content;
-  height: 37.5rem;
-  margin: 0 auto 0 auto;
-  z-index: 3;
+/* ------------------------------------------------------------------ hero */
+
+.hero {
+  position: relative;
   display: flex;
-  gap: 2.75rem
-}
-
-.headerLogo {
-  z-index: 6;
-  height: 11.25rem;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.headerTitle {
-  z-index: 6;
-  width: fit-content;
-  margin: auto auto auto 0;
-  line-height: normal;
-  display: flex;
-  flex-direction: column;
-}
-
-.headerTitleWhiteText, .headerAtSJSU {
-  color: white;
-}
-
-.headerAtSJSU {
-  margin-left: auto;
-}
-
-.headerAsian {
-  width: fit-content;
-}
-
-.headerImageBlueGradient {
-  z-index: 2;
-  position: absolute;
-  height: 37.5rem;
-  width: 100%;
-  top: 3rem;
-  background-image: linear-gradient(180deg,rgba(15,108,182,0)26%,rgba(0,89,160,0.722)100%),linear-gradient(rgba(0,0,0,0.7)0%,rgba(0,0,0,0.7)100%)
-}
-
-.headerImageBlackBackground {
-  z-index: 0;
-  position: absolute;
-  height: 37.5rem;
-  width: 100%;
-  top: 3rem;
-  background-color: black;
-}
-
-.aboutSASEContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 5.5rem;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
+  min-height: clamp(30rem, 68vh, 40rem);
+  background-color: #000000;
+  isolation: isolate;
+  overflow: hidden;
 }
 
-.aboutSASEOrg {
+/* Sits between the carousel (-2) and the copy. */
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(
+      180deg,
+      rgba(8, 47, 82, 0.35) 0%,
+      rgba(8, 47, 82, 0.9) 100%
+    ),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 70%);
+}
+
+.heroInner {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.heroLogo {
+  height: 4rem;
+  width: auto;
+  margin-bottom: 1.75rem;
+}
+
+.heroTitle {
   display: flex;
-  margin: auto;
-  justify-content: center;
-  gap: 10rem;
-  width: 60rem;
-
-  .question {
-    width: 13rem;
-  }
-
-  .description {
-    flex-basis: 50rem;
-  }
+  flex-direction: column;
+  color: #ffffff;
+  font-size: clamp(2.25rem, 5.4vw, 4rem);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
 }
 
-.blueBlur {
-  width: 15.6rem;
-  height: 1.9rem;
-  margin: 1.25rem -17rem 0 -15rem;
+.heroAt {
+  font-size: 0.55em;
+  font-weight: 700;
+  margin-top: 0.35rem;
+  letter-spacing: -0.02em;
 }
 
-.eventsContainer, .programsContainer, .socialsContainer {
+.heroLede {
+  margin-top: 1.5rem;
+  max-width: 46ch;
+  font-size: var(--fs-lede);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 7.5rem;
-  width: 90vw;
-  margin: 5rem auto 5rem auto;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ----------------------------------------------------------------- about */
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 18rem minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.aboutTitle {
+  margin-top: 0.625rem;
+  margin-bottom: 1.125rem;
+}
+
+.aboutBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: var(--color-muted);
+  max-width: 60ch;
+}
+
+/* ----------------------------------------------------------- card grids */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.sectionLink {
+  margin-top: 2rem;
+  color: var(--color-muted);
+}
+
+/* ------------------------------------------------------------- sponsor CTA */
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) auto;
+  gap: clamp(1.75rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.ctaTitle {
+  margin-top: 0.75rem;
+  max-width: 18ch;
+}
+
+.ctaBody {
+  margin-top: 1.125rem;
+  max-width: 54ch;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+}
+
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------- socials */
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: clamp(2rem, 6vw, 4.5rem);
 }
 
-.eventsLink {
-  width: fit-content;
-  margin: 0 auto 0 auto;
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
-.socialsContainer {
-
-  a {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  img {
-    width: 5.5rem;
-  }
-
+.social img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+  transition: transform 0.18s ease;
 }
 
-@media (width <= 1150px) {
+.social:hover {
+  color: var(--color-sase-blue);
+}
 
-  .aboutSASEOrg {
-    width: 50rem;
+.social:hover img {
+  transform: translateY(-3px);
+}
+
+/* ----------------------------------------------------------- breakpoints */
+
+@media (width <= 900px) {
+  .aboutGrid,
+  .ctaGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ctaActions {
     flex-direction: row;
-    text-align: left;
-
-    .question {
-      width: 8rem;
-    }
+    flex-wrap: wrap;
   }
 
-}
-
-@media (width <= 1024px) {
-  
-  .aboutSASEOrg {
-    width: 33rem;
-    text-align: left;
-
-    .question {
-      text-align: right;
-      width: fit-content;
-    }
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .blueBlur {
-      margin: 1.25rem -13rem 0 -11rem;
-  }
-
-  .headerContainer {
-    flex-direction: row;
-    width: 32rem;
-  }
-
-  .headerTitle {
-    width: 21rem;
-    margin-right: 0;
-  }
-  
-  .headerAtSJSU {
-    margin-right: auto;
-    margin-left: 0;
-  }
-  
-  .eventsContainer, .programsContainer, .socialsContainer {
-    gap: 3rem
-  }
-
-  .socialsContainer {
-    width: 85vw;
-  }
-
 }
 
 @media (width <= 640px) {
-
-  .headerContainer, .headerImageBlackBackground, .headerImageBlueGradient {
-    height: 31rem;
+  .cardGrid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .headerContainer {
-    flex-direction: column;
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem
+  .heroLogo {
+    height: 3rem;
+    margin-bottom: 1.25rem;
   }
 
-  .headerTitle {
-    font-size: 1.3rem;
-    width: auto;
-    margin: unset;
-
-    * {
-      line-height: 2.2rem;
-      margin: unset;
-      text-align: center;
-    }
+  .heroActions :global(.btn),
+  .ctaActions :global(.btn) {
+    flex: 1 1 auto;
   }
 
-  .headerLogo {
-    width: 5rem;
-    margin: 0;
-    height: auto
-  }
-
-  .headerTitleWhiteText {
-    width: 11rem;
-  }
-
-  .headerScientistAndEngineers {
-    font-size: 1.8rem;
-  }
-
-  .headerAsian {
-    width: 100%;
-    font-size: 3.5rem;
-    align-items: center;
-    margin: 0.2rem 0 0.65rem 0
-  }
-
-  .aboutSASEOrg {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    width: 76vw;
-    gap: 3rem;
-
-    * {
-      width: fit-content;
-      margin: auto;
-    }
-
-    .question {
-      font-size: 1.6rem;
-      width: 100%;
-      text-align: center;
-    }
-
-    .description {
-      flex-basis: 0;
-    }
-
-  }
-
-  .blueBlur {
-    width: 60vw;
-    height: 5rem;
-    margin-bottom: -9.5rem;
-  }
-
-  .eventsContainer, .programsContainer, .socialsContainer {
-    margin: 4rem auto 4rem auto;
+  .socials {
     gap: 2rem;
   }
-
-  .socialsContainer {
-
-    width: 65vw;
-    margin-left: auto;
-    margin-right: auto;
-
-    a {
-      gap: 0.5rem
-    }
-
-    img {
-      width: 3.8rem;
-    }   
-
-  }
-
-  .eventsLink {
-    width: 70vw;
-    text-align: center;
-  }
-
 }

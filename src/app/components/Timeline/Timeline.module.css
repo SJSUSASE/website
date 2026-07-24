@@ -1,0 +1,71 @@
+.wrapper {
+  max-width: 40rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 0 0 1.75rem 2rem;
+}
+
+/* The connecting rail, stopped short on the final item. */
+.item::before {
+  content: "";
+  position: absolute;
+  left: 0.3125rem;
+  top: 0.75rem;
+  bottom: -0.25rem;
+  width: 2px;
+  background-color: var(--color-line);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+.item:last-child::before {
+  display: none;
+}
+
+.marker {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--color-sase-blue);
+  box-shadow: 0 0 0 3px var(--color-sase-blue-tint);
+}
+
+.when {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--color-sase-blue);
+}
+
+.what {
+  font-size: 1rem;
+  color: var(--color-ink);
+}
+
+.note {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+@media (width <= 560px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+}

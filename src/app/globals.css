@@ -1,139 +1,275 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens.
+ * Colors live in @theme so they are also available as Tailwind utilities
+ * (text-sase-blue, bg-surface, border-line, ...).
+ */
+@theme {
+  /* Brand */
+  --color-sase-blue: #0f6cb6;
+  --color-sase-blue-dark: #0a4d82;
+  --color-sase-blue-deep: #082f52;
+  --color-sase-blue-tint: #eef5fb;
+  --color-sase-green: #8dc63f;
+  --color-sase-green-dark: #6da12f;
+
+  /* Neutrals */
+  --color-ink: #12212e;
+  --color-muted: #5b6b7a;
+  --color-line: #e3e8ee;
+  --color-surface: #f7f9fb;
+
+  --font-sans: var(--font-albert-sans);
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --gradient: linear-gradient(
-    90deg,
-    rgba(15, 108, 182, 1) 28%,
-    rgba(141, 198, 63, 1) 66%
-  );
-  --button-gradient: conic-gradient(
-    from 270deg at 50% 50%,
-    #0f6cb6 0%,
-    #8dc63f 25%,
-    #0f6cb6 100%
-  );
+  --foreground: #12212e;
+
+  /* The brand gradient. Used sparingly: wordmark and accent rules only. */
+  --gradient: linear-gradient(90deg, #0f6cb6 10%, #8dc63f 90%);
+
+  /* Fluid type scale */
+  --fs-display: clamp(2.5rem, 6vw, 4rem);
+  --fs-h1: clamp(2.125rem, 4.5vw, 3.125rem);
+  --fs-h2: clamp(1.75rem, 3.2vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-h4: 1.125rem;
+  --fs-lede: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+
+  /* Rhythm */
+  --section-y: clamp(4rem, 8vw, 6.5rem);
+  --container: 75rem;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  --radius: 0.75rem;
+  --radius-lg: 1.25rem;
+  --shadow-card: 0 1px 2px rgba(18, 33, 46, 0.04), 0 8px 24px rgba(18, 33, 46, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(18, 33, 46, 0.06), 0 16px 40px rgba(18, 33, 46, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-albert-sans);
+  font-family: var(--font-albert-sans), system-ui, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Headings carry weight and rhythm only -- no color tricks, no gradient, no
+ * centering. Decoration is opt-in via the classes below so pages compose freely.
+ */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-ink);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 h1 {
-  background-image: var(--gradient);
-  @apply bg-clip-text
-  text-6xl
-  text-transparent
-  font-bold
-  w-fit
-  m-auto;
+  font-size: var(--fs-h1);
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  background-image: var(--gradient);
-  font-size: 2.75rem;
-  @apply bg-clip-text
-  text-transparent
-  font-bold
-  w-fit
-  mx-auto;
+  font-size: var(--fs-h2);
+  letter-spacing: -0.015em;
 }
 
 h3 {
-  font-size: 1.75rem;
-  @apply z-1;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.01em;
 }
 
-a, p {
-  line-height: 2.4rem;
-  font-size: 1.25rem;
-  z-index: 1;
+h4 {
+  font-size: var(--fs-h4);
+  line-height: 1.35;
 }
 
-section {
-  margin-top: 11rem
+p {
+  text-wrap: pretty;
 }
 
-.header-image {
-  @apply h-75 
-  w-full
-  bg-center
-  bg-cover
-  bg-black
-  mb-25;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.blue-blur {
-  background-color: rgba(15, 108, 182, 0.6);
-  filter: blur(100px);
-  border-radius: 50%;
-  /* @apply min-h-7.5 max-h-7.5
-  min-w-62.5 max-w-62.5; */
+:focus-visible {
+  outline: 2px solid var(--color-sase-blue);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-.green-blur {
-  background-color: rgba(141, 198, 63, 0.8);
-  filter: blur(100px);
-  border-radius: 50%;
-  @apply min-h-7.5 max-h-7.5
-  min-w-62.5 max-w-62.5;
+/* ---------------------------------------------------------------- layout */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
-.button {
-  background: var(--button-gradient);
-  @apply text-white
-  font-bold
-  px-3
-  py-1.5
-  rounded-md;
+/* ------------------------------------------------------------ typography */
+
+.display {
+  font-size: var(--fs-display);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
-.button:hover {
-  @apply drop-shadow-md
-  drop-shadow-gray-400;
+.eyebrow {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-sase-blue);
+  line-height: 1.4;
+}
+
+.lede {
+  font-size: var(--fs-lede);
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.small {
+  font-size: var(--fs-small);
+  color: var(--color-muted);
 }
 
 .text-gradient {
   background-image: var(--gradient);
-  @apply bg-clip-text
-  text-transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-@theme {
-  --color-sase-blue: #0f6cb6;
-  --color-sase-green: #8dc63f;
-  --color-yeh: ;
+/* Thin brand rule used to accent section headers and card tops. */
+.accent-rule {
+  display: block;
+  width: 3rem;
+  height: 3px;
+  border-radius: 2px;
+  background-image: var(--gradient);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* --------------------------------------------------------------- buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease,
+    border-color 0.18s ease, transform 0.18s ease;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+.btn:active {
+  transform: translateY(1px);
+}
 
-@media (width <= 640px) {
-  h2 {
-    font-size: 1.9rem;
-  }
+.btn-primary {
+  background-color: var(--color-sase-blue);
+  color: #ffffff;
+}
 
-  section {
-    margin-top: 7rem;
-  }
-  
-  a,p {
-    font-size: 1rem;
-    line-height: 1.7rem;
+.btn-primary:hover {
+  background-color: var(--color-sase-blue-dark);
+}
 
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-line);
+  color: var(--color-ink);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-sase-blue);
+  color: var(--color-sase-blue);
+}
+
+/* For use on dark photo / navy backgrounds. */
+.btn-inverse {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+.btn-inverse:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: var(--color-sase-blue-deep);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+}
+
+/* ----------------------------------------------------------------- cards */
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* ------------------------------------------------------------ inline link */
+
+.link {
+  color: var(--color-sase-blue);
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------- utilities */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

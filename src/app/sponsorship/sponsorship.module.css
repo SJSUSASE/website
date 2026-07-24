@@ -1,0 +1,282 @@
+/* Shared layout styles for the /sponsorship routes. */
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: var(--color-muted);
+  max-width: 68ch;
+}
+
+.signature {
+  margin-top: 1.75rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* -------------------------------------------------------------- grids */
+
+/* Cards stretch to a shared height rather than ragging along the bottom edge. */
+.threeUp {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.twoUp {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.textCard {
+  padding: 1.75rem;
+  height: 100%;
+}
+
+.textCardTitle {
+  font-size: 1.125rem;
+}
+
+.textCardBody {
+  margin-top: 0.75rem;
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+/* ------------------------------------------------------------ metrics */
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: 2rem;
+}
+
+.chartCard {
+  padding: 1.75rem;
+}
+
+.chartTitle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.majorList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.majorTag {
+  padding: 0.375rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--color-sase-blue-tint);
+  color: var(--color-sase-blue-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------ definition list */
+
+.defList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  margin: 0;
+}
+
+.defRow {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-bottom: 1.125rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.defRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.defTerm {
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: var(--fs-small);
+}
+
+.defDesc {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------------- CTAs */
+
+/* Used inside the navy band, so it inherits that section's text colour. */
+.ctaBlock {
+  max-width: 60ch;
+}
+
+.ctaTitle {
+  margin-top: 0.75rem;
+  margin-bottom: 1.125rem;
+}
+
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.centerActions {
+  justify-content: center;
+}
+
+.linkRow {
+  margin-top: 2rem;
+}
+
+/* ------------------------------------------------------------ conference */
+
+.conferenceTitle {
+  margin-top: 0.5rem;
+  font-size: 1.375rem;
+}
+
+.conferenceWhen {
+  margin-top: 0.375rem;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-sase-blue);
+}
+
+/* ---------------------------------------------------------- cost table */
+
+.costTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.costTable th,
+.costTable td {
+  text-align: left;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-small);
+}
+
+.costTable th {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.costTable td:last-child,
+.costTable th:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.totalRow td {
+  font-weight: 800;
+  color: var(--color-ink);
+  border-bottom: none;
+  font-size: 1rem;
+}
+
+.costNote {
+  margin-top: 0.875rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+/* -------------------------------------------------------------- calendar */
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.calendarYear {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.calendarList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.calendarRow {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-small);
+}
+
+.calendarDate {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.calendarEvent {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--color-muted);
+}
+
+.ownerTag {
+  flex-shrink: 0;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ownerSase {
+  background-color: var(--color-sase-blue-tint);
+  color: var(--color-sase-blue-dark);
+}
+
+.ownerSjsu {
+  background-color: var(--color-line);
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------- breakpoints */
+
+@media (width <= 900px) {
+  .threeUp,
+  .twoUp,
+  .chartGrid,
+  .calendarGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width <= 520px) {
+  .defRow,
+  .calendarRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+}

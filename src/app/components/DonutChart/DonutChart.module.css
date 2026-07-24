@@ -1,0 +1,59 @@
+.chart {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 0;
+}
+
+.svg {
+  width: 9.5rem;
+  height: 9.5rem;
+  flex-shrink: 0;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.legendItem {
+  display: grid;
+  grid-template-columns: 0.75rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--fs-small);
+}
+
+.swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 3px;
+}
+
+.legendLabel {
+  color: var(--color-ink);
+}
+
+.legendValue {
+  font-weight: 700;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (width <= 420px) {
+  .chart {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .legend {
+    width: 100%;
+  }
+}

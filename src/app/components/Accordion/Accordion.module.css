@@ -1,0 +1,74 @@
+.list {
+  border-top: 1px solid var(--color-line);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Hide the default disclosure triangle in both engines. */
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::marker {
+  content: "";
+}
+
+.summary:hover {
+  color: var(--color-sase-blue);
+}
+
+/* Plus sign that becomes a minus when the item is open. */
+.icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: var(--color-sase-blue);
+  transition: rotate 0.18s ease, opacity 0.18s ease;
+}
+
+.icon::before {
+  width: 0.875rem;
+  height: 2px;
+}
+
+.icon::after {
+  width: 2px;
+  height: 0.875rem;
+}
+
+.item[open] .icon::after {
+  opacity: 0;
+}
+
+.answer {
+  margin: 0;
+  padding: 0 0 1.5rem;
+  max-width: 60ch;
+  color: var(--color-muted);
+  line-height: 1.7;
+}

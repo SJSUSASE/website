@@ -1,48 +1,58 @@
-// if you wanna implement image carousel (like on home page) on your page
+// Cross-fading background image carousel. Fills its nearest positioned parent.
 
-"use client"
+"use client";
 
 import { useEffect, useRef, useState } from "react";
-import "./FadeInCarousel.css"
-import styles from "./FadeInCarousel.module.css"
+import "./FadeInCarousel.css";
+import styles from "./FadeInCarousel.module.css";
 
 type imagesProp = {
-  images: string[]
+  images: string[];
 };
 
-export default function FadeInCarousel({images}:imagesProp) {
-  
+const HOLD_MS = 7000;
+const FADE_MS = 1500;
+
+export default function FadeInCarousel({ images }: imagesProp) {
   const [currentImage, setCurrentImage] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
+    // Tracked so the pending swap is cancelled on unmount, not just the interval.
+    let swapTimeout: ReturnType<typeof setTimeout> | undefined;
+
     const interval = setInterval(() => {
-      if (ref.current) {
-        ref.current.classList.remove('fade-in');
-        ref.current.classList.add('fade-out');
+      if (!ref.current) return;
 
-        setTimeout(() => {
-          setCurrentImage((prev) => (prev + 1) % images.length);
+      ref.current.classList.remove("fade-in");
+      ref.current.classList.add("fade-out");
 
-          ref.current?.classList.remove('fade-out');
-          void ref.current?.offsetWidth;
-          ref.current?.classList.add('fade-in');
+      swapTimeout = setTimeout(() => {
+        setCurrentImage((prev) => (prev + 1) % images.length);
 
-        }, 1500);
-      }
-    }, 7000);
-  
-    return () => clearInterval(interval);
-      
-  }, []);
+        ref.current?.classList.remove("fade-out");
+        void ref.current?.offsetWidth;
+        ref.current?.classList.add("fade-in");
+      }, FADE_MS);
+    }, HOLD_MS);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(swapTimeout);
+    };
+  }, [images.length]);
 
   return (
-    <div className={`fade-in ${styles.carouselContainer}`} id="carousel" ref={ref} 
+    <div
+      className={`fade-in ${styles.carouselContainer}`}
+      id="carousel"
+      ref={ref}
+      aria-hidden="true"
       style={{
-      backgroundImage: `url(${images[currentImage]})`, 
-      backgroundSize: "cover",
-      backgroundPosition: currentImage == 0? "bottom" : "center", 
-      }}>
-    </div>
-  )
+        backgroundImage: `url(${images[currentImage]})`,
+        backgroundSize: "cover",
+        backgroundPosition: currentImage === 0 ? "bottom" : "center",
+      }}
+    ></div>
+  );
 }

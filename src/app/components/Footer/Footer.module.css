@@ -1,124 +1,97 @@
-.footerContainer {
-  display: flex;
-  background-color: white;
-
-  border-color: var(--color-gray-400);
-  border-top-width: 0.1rem;
-
-  margin-top: 17rem;
-  color: var(--color-gray-400);
-  padding: 0 1.25rem 0 1.25rem;
-  height: 5.5rem;
-
-  align-items: center;
-
-  p {
-    line-height: 2rem;
-  }
-
+.footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-line);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 
-.logoContainer {
+.inner {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+}
 
-  margin-right: 5rem;
-  width: 14rem;
-  flex-wrap: wrap;
+.brandColumn {
+  max-width: 22rem;
+}
+
+.logos {
   display: flex;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-  > * {
-    width: auto;
-    height: 1.75rem;
-  }
-
+.logos img {
+  height: 2rem;
+  width: auto;
 }
 
 .address {
-  text-align: center;
-  margin: auto;
-  width: 36rem;
+  margin-top: 1.125rem;
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  line-height: 1.6;
 }
 
-.creator {
-  text-align: right;
-  width: 15rem;
-  font-size: 1.25rem;
-  visibility: visible;
+.columnTitle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  margin-bottom: 0.875rem;
 }
 
-@media (width <= 1400px) {
-
-  .logoContainer {
-    margin: 0;
-  }
-
-  .address {
-    margin-right: 0;
-    text-align: right;
-  }
-
-  .creator {
-    visibility: collapse;
-  }
-
+.linkColumn ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
 }
 
-@media (width <= 775px) {
-
-  .footerContainer {
-    height: 8rem
-  }
-
-  .logoContainer {
-    gap: 1rem
-  }
-
-  .address {
-    width: 19rem;
-  }
-
+.linkColumn a {
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  overflow-wrap: anywhere;
 }
 
-@media (width <= 640px) {
-
-  .footerContainer {
-    p {
-      line-height: 1.5rem;
-    }
-  }
-
-  .logoContainer {
-    visibility: visible;
-    gap: 0.5rem;
-    width: 11rem;
-    flex-wrap: wrap;
-    display: flex;
-
-    > * {
-      width: auto;
-      height: 1.3rem;
-    }
-  }
-
-  .address {
-    width: 18rem;
-  }
-  
+.linkColumn a:hover {
+  color: var(--color-sase-blue);
 }
 
-@media (width <= 412px) {
+.baseline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
 
-  .footerContainer {
-    height: 7rem
+@media (width <= 900px) {
+  .inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .address {
-    width: fit-content;
-    text-align: center;
+  .brandColumn {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+
+@media (width <= 520px) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
   }
 
-  .logoContainer {
-    visibility: collapse;
+  .baseline {
+    justify-content: flex-start;
   }
-
 }
