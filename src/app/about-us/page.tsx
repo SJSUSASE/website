@@ -67,7 +67,7 @@ export default function AboutPage() {
         tone="surface"
         eyebrow="Who runs the chapter"
         title="Executive board"
-        lede="Twelve elected officers serve each academic year."
+        lede="Ten elected officers serve each academic year."
       >
         <div className={styles.boardGrid}>
           {board.map((member, index) => (
