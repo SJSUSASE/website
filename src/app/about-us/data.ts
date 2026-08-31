@@ -62,28 +62,64 @@ export const values: Value[] = [
  */
 export const board: BoardMember[] = [
   {
-    name: "Alan To",
+    name: "Lukas Tolentino",
     role: "President",
-    term: "2025-2026",
-    image: "/about_us/president_img.jpg",
+    term: "2026-2027",
+    image: "/about_us/board/lukas.jpg",
   },
   {
-    name: "Name TBD",
+    name: "Wattanak Keo",
     role: "Vice President",
-    term: "2025-2026",
-    image: "/about_us/president_img.jpg",
+    term: "2026-2027",
+    image: "/about_us/board/nak.jpg",
   },
   {
-    name: "Name TBD",
+    name: "Andy Tran",
     role: "Treasurer",
-    term: "2025-2026",
-    image: "/about_us/president_img.jpg",
+    term: "2026-2027",
+    image: "/about_us/board/Andy.jpg",
   },
   {
-    name: "Name TBD",
+    name: "Minh Doan",
     role: "Secretary",
-    term: "2025-2026",
-    image: "/about_us/president_img.jpg",
+    term: "2026-2027",
+    image: "/about_us/board/Minh.jpg",
+  },
+    {
+    name: "Lorenzo De Guzman",
+    role: "Program Director",
+    term: "2026-2027",
+    image: "/about_us/board/Lorenzo.jpg",
+  },
+  {
+    name: "Alina Ly",
+    role: "Program Director",
+    term: "2026-2027",
+    image: "/about_us/board/Alina.jpg",
+  },
+    {
+    name: "Katelyn Nguyen",
+    role: "Event Coordinator",
+    term: "2026-2027",
+    image: "/about_us/board/Katelyn.jpg",
+  },
+  {
+    name: "Jeanie Chan",
+    role: "Event Coordinator",
+    term: "2026-2027",
+    image: "/about_us/board/Jeanie.jpg",
+  },
+    {
+    name: "Jhumar Opinaldo",
+    role: "Marketing Director",
+    term: "2026-2027",
+    image: "/about_us/board/Jhumar.jpg",
+  },
+  {
+    name: "Stacy Le",
+    role: "Marketing Director",
+    term: "2026-2027",
+    image: "/about_us/board/Stacy.jpg",
   },
 ];
 
@@ -116,6 +152,6 @@ export const faq: FaqItem[] = [
   {
     question: "Is there a membership fee?",
     answer:
-      "TODO(sase): confirm the current dues amount and what it covers before publishing this answer.",
+      "No. SASE at SJSU is completely free to join.",
   },
 ];

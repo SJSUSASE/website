@@ -70,8 +70,11 @@ export default function AboutPage() {
         lede="Twelve elected officers serve each academic year."
       >
         <div className={styles.boardGrid}>
-          {board.map((member) => (
-            <article key={member.role} className={`card ${styles.member}`}>
+          {board.map((member, index) => (
+            <article
+              key={`${member.role}-${index}`}
+              className={`card ${styles.member}`}
+            >
               <div className={styles.memberFrame}>
                 <img src={member.image} alt="" />
               </div>

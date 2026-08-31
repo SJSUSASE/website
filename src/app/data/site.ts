@@ -12,7 +12,7 @@ export const site = {
 
 export const forms = {
   /** General member sign-up. */
-  memberSignUp: "https://forms.gle/qvTNLpruWiycUp6L9",
+  memberSignUp: "https://tinyurl.com/SASEMEMBERSHIP26-27",
   /** Company sponsorship interest form (from the 2025-2026 package). */
   sponsorship: "https://forms.gle/6ZrTaPgj1e3Cffdo7",
 } as const;

@@ -239,7 +239,7 @@ export const kickstarter = {
 
 export const kickstarterTimeline: TimelineEntry[] = [
   { when: "~ October", what: "Intro / theme reveal" },
-  { when: "~ November", what: "Mentor reveal" },
+  { when: "~ November", what: "Industry mentor reveal" },
   { when: "~ February", what: "1st progress check" },
   { when: "~ March", what: "2nd progress check / demo" },
   { when: "~ April / May", what: "Final showcase" },
@@ -247,7 +247,7 @@ export const kickstarterTimeline: TimelineEntry[] = [
 
 export const calendar: CalendarYear[] = [
   {
-    year: 2025,
+    year: 2026,
     entries: [
       { date: "August 18", event: "Fall semester begins", owner: "SJSU" },
       {
@@ -261,7 +261,7 @@ export const calendar: CalendarYear[] = [
     ],
   },
   {
-    year: 2026,
+    year: 2027,
     entries: [
       { date: "January 20", event: "Spring semester begins", owner: "SJSU" },
       {
