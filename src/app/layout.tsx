@@ -3,6 +3,7 @@ import { Albert_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const albert_sans = Albert_Sans({
   subsets: ["latin"],
@@ -64,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${albert_sans.variable} antialiased`}>
+        <Analytics />
         <Nav />
         <main>{children}</main>
         <Footer />
