@@ -1,0 +1,15 @@
+# Binary assets: never apply text/EOL or diff filters. A PDF that gets
+# decoded as UTF-8 and re-encoded loses every non-ASCII byte to U+FFFD,
+# which leaves the page structure intact but renders every page blank.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.mp4   binary

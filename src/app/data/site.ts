@@ -19,7 +19,7 @@ export const forms = {
 
 /** Served from public/ -- see public/sponsorship/. */
 export const sponsorshipPackagePdf =
-  "/sponsorship/SJSU-SASE-Sponsorship-Package-2025-2026.pdf";
+  "/sponsorship/SJSU-SASE-Sponsorship-Package-2026-2027.pdf";
 
 export type Social = {
   name: string;
