@@ -29,7 +29,7 @@
 
 .deep .eyebrow,
 .deep :global(.eyebrow) {
-  color: var(--color-sase-green);
+  color: var(--color-sase-blue-light);
 }
 
 .narrow {

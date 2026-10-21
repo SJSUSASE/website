@@ -40,18 +40,18 @@ export const categories: EventCategory[] = [
  */
 export const upcoming: UpcomingEvent[] = [
   {
-    name: "7th Street Tabling",
-    date: "September 8th-9th",
+    name: "Mentorship Speed Dating",
+    date: "October 6th",
     flyer: "/home/events/event1.png",
   },
   {
-    name: "Lockheed Martin Insights",
-    date: "September 11th",
+    name: "Intel Onsite Panel",
+    date: "October 16th",
     flyer: "/home/events/event2.png",
   },
   {
-    name: "1st General Meeting",
-    date: "September 12th",
+    name: "2nd General Meeting",
+    date: "October 23rd",
     flyer: "/home/events/event3.png",
   },
 ];

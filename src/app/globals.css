@@ -6,13 +6,21 @@
  * (text-sase-blue, bg-surface, border-line, ...).
  */
 @theme {
-  /* Brand */
-  --color-sase-blue: #0f6cb6;
-  --color-sase-blue-dark: #0a4d82;
-  --color-sase-blue-deep: #082f52;
-  --color-sase-blue-tint: #eef5fb;
-  --color-sase-green: #8dc63f;
-  --color-sase-green-dark: #6da12f;
+  /*
+   * Brand -- the two SASE logo blues.
+   * Dark indigo navy (the "sase" wordmark) + light periwinkle (the flask).
+   * The primary (--color-sase-blue) is the logo navy lifted a few steps so it
+   * reads as a live interactive colour on white while staying in the family.
+   */
+  --color-sase-blue: #1e2d73;
+  --color-sase-blue-dark: #14214f;
+  --color-sase-blue-deep: #0c1848;
+  --color-sase-blue-tint: #edeffa;
+  /* Light periwinkle from the flask -- the secondary accent. The -strong
+     variant is dark enough to register on light backgrounds; the base is the
+     true logo periwinkle, for use on the deep navy. */
+  --color-sase-blue-light: #8ca0dc;
+  --color-sase-blue-light-strong: #5a6fc4;
 
   /* Neutrals */
   --color-ink: #12212e;
@@ -27,8 +35,9 @@
   --background: #ffffff;
   --foreground: #12212e;
 
-  /* The brand gradient. Used sparingly: wordmark and accent rules only. */
-  --gradient: linear-gradient(90deg, #0f6cb6 10%, #8dc63f 90%);
+  /* The brand gradient: logo navy into periwinkle. Used sparingly: wordmark
+     and accent rules only. The light end stays legible as large text on white. */
+  --gradient: linear-gradient(90deg, #0c1848 0%, #5a6fc4 100%);
 
   /* Fluid type scale */
   --fs-display: clamp(2.5rem, 6vw, 4rem);

@@ -11,8 +11,8 @@ type DonutChartProps = {
   unit?: string;
 };
 
-/** Slice colours, in order. Brand first, then supporting neutrals. */
-const PALETTE = ["#0f6cb6", "#8dc63f", "#0a4d82", "#6da12f", "#5b6b7a"];
+/** Slice colours, in order: a navy-to-periwinkle ramp from the SASE logo. */
+const PALETTE = ["#0c1848", "#2f3f8f", "#5a6fc4", "#8ca0dc", "#b9c4ea"];
 
 const RADIUS = 60;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
